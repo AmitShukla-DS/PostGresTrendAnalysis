@@ -171,9 +171,8 @@ public class AnalogService {
 					  startDateTime =startDate; 
 					  endDateTime =  endDate; 
 					   }
-				  //System.out.println("Parsed startDateTime: " + startDateTime);
-				  //System.out.println("Parsed endDateTime: " + endDateTime);
-				  String startDateTimeString = startDateTime.toString();
+				
+				  //String startDateTimeString = startDateTime.toString();
 				  
 					/*
 					 * String endDateTimeString = endDateTime.toString(); DateTimeFormatter
@@ -210,25 +209,7 @@ public class AnalogService {
 		
 					 System.out.println("select query "+sql); 
 
-				/*
-				 * 
-				 * 
-				 * 
-				 * 
-				 * Query query = localEntityManager.createNativeQuery(sql);
-				 * System.out.println(query); query.setParameter(1,deviceId);
-				 * query.setParameter(2,measName); query.setParameter(3,startDateTime);
-				 * query.setParameter(4,endDateTime);
-				 */
-				
-				
-					/*
-					 * Query query = localEntityManager.createNativeQuery(sql);
-					 * query.setParameter("assetId", deviceId);
-					 * query.setParameter("measurementNames", measName); // Assuming
-					 * measurementNames is a List<String> query.setParameter("startDateTime",
-					 * startDateTime); query.setParameter("endDateTime", endDateTime);
-					 */
+					
 				 
 				 Query query = localEntityManager.createNativeQuery(sql);
 				 query.setParameter(1, deviceId);
@@ -256,18 +237,9 @@ public class AnalogService {
 					Double value = (Double) objArr[2];
 					String measurementName = (String) objArr[1];
 					 
-					
-					/*
-					 * Instant timestamp = (Instant) objArr[0]; Double value = (Double) objArr[1];
-					 * String measurementName = (String) objArr[2];
-					 */
-		
-					// Assuming you have deviceId available as a String variable
-					//String deviceId = "your_device_id";
-
- //changed for testing 
-					//List<Object> innerList=Arrays.asList(timestamp.toString(),value);
-					List<Object> innerList=Arrays.asList(value);
+				
+					List<Object> innerList=Arrays.asList(timestamp.toString(),value);
+					//List<Object> innerList=Arrays.asList(value);
 					System.out.println(innerList);
 		
 					// Check if the measurement name is already in the map
